@@ -111,4 +111,18 @@ public class CheckoutTransactionTest {
         prices.add(new StandardPrice("C", 30));
         new CheckoutTransaction(prices);
     }
+
+    @Test
+    public void addInvalidItem(){
+        var items = new ArrayList<>(List.of("X"));
+        var checkoutTransaction = new CheckoutTransaction(prices);
+        Assert.assertEquals(0, checkoutTransaction.calculateTotal(items));
+    }
+
+    @Test
+    public void addInvalidItemWithValidItem(){
+        var items = new ArrayList<>(List.of("C", "X", "D"));
+        var checkoutTransaction = new CheckoutTransaction(prices);
+        Assert.assertEquals(35, checkoutTransaction.calculateTotal(items));
+    }
 }
