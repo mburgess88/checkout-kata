@@ -1,6 +1,14 @@
 # checkout-kata
 
-This is a checckout which whichl calculte the total of the items in your basket based on a set of defined prices.
+This is a checkout which calculates the total of the items in your basket based on a set of defined prices.
+
+**Requirements**
+
+This application requires:
+
+-Java 16
+
+-Maven
 
 **Assumptions**
 
